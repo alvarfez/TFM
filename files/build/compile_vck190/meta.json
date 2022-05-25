@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "customcnn.xmodel",
+    "kernel": [
+        "subgraph_conv2d\/Conv2D"
+    ],
+    "target": "DPUCVDX8G_ISA2_C32B3"
+}

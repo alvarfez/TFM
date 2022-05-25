@@ -1,0 +1,70 @@
+
+------------------------------------
+Keras version      : 2.2.4-tf
+TensorFlow version : 1.15.2
+Python version     : 3.6.15 | packaged by conda-forge | (default, Dec  3 2021, 18:49:41) 
+[GCC 9.4.0]
+------------------------------------
+Command line options:
+ --input_height    :  28
+ --input_width     :  28
+ --input_chan      :  1
+ --epochs          :  10
+ --batchsize       :  100
+ --learnrate       :  0.0001
+ --output_ckpt_path:  ./build/chkpts/float_model.ckpt
+ --infer_graph_path:  ./build/chkpts/inference_graph.pb
+ --tboard_path     :  ./build/tb_logs
+ --gpu             :  0
+------------------------------------
+
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+    8192/11490434 [..............................] - ETA: 1s   73728/11490434 [..............................] - ETA: 7s  155648/11490434 [..............................] - ETA: 7s  262144/11490434 [..............................] - ETA: 6s  606208/11490434 [>.............................] - ETA: 3s  729088/11490434 [>.............................] - ETA: 3s 1277952/11490434 [==>...........................] - ETA: 2s 2211840/11490434 [====>.........................] - ETA: 1s 2867200/11490434 [======>.......................] - ETA: 1s 3637248/11490434 [========>.....................] - ETA: 0s 4472832/11490434 [==========>...................] - ETA: 0s 5324800/11490434 [============>.................] - ETA: 0s 6291456/11490434 [===============>..............] - ETA: 0s 7077888/11490434 [=================>............] - ETA: 0s 7225344/11490434 [=================>............] - ETA: 0s 7413760/11490434 [==================>...........] - ETA: 0s 8126464/11490434 [====================>.........] - ETA: 0s 9142272/11490434 [======================>.......] - ETA: 0s10207232/11490434 [=========================>....] - ETA: 0s11304960/11490434 [============================>.] - ETA: 0s11493376/11490434 [==============================] - 1s 0us/step
+Network input shape:  (?, 28, 28, 1)
+WARNING:tensorflow:From /workspace/customcnn.py:42: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+WARNING:tensorflow:From /opt/vitis_ai/conda/envs/vitis-ai-tensorflow/lib/python3.6/site-packages/tensorflow_core/python/layers/convolutional.py:424: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+WARNING:tensorflow:From /workspace/customcnn.py:43: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.BatchNormalization instead.  In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.batch_normalization` documentation).
+                      (?, 14, 14, 16)
+                      (?, 7, 7, 32)
+                      (?, 4, 4, 64)
+                      (?, 1, 1, 10)
+WARNING:tensorflow:From /workspace/customcnn.py:63: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+Network output shape: (?, 10)
+WARNING:tensorflow:From /opt/vitis_ai/conda/envs/vitis-ai-tensorflow/lib/python3.6/site-packages/tensorflow_core/python/ops/losses/losses_impl.py:121: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+
+----------------------------
+ TRAINING STARTED...
+----------------------------
+ Epoch 1 / 10 - accuracy 92.04 %
+ Epoch 2 / 10 - accuracy 94.90 %
+ Epoch 3 / 10 - accuracy 96.04 %
+ Epoch 4 / 10 - accuracy 96.78 %
+ Epoch 5 / 10 - accuracy 97.02 %
+ Epoch 6 / 10 - accuracy 97.48 %
+ Epoch 7 / 10 - accuracy 97.72 %
+ Epoch 8 / 10 - accuracy 97.90 %
+ Epoch 9 / 10 - accuracy 97.98 %
+ Epoch 10 / 10 - accuracy 98.08 %
+
+----------------------------
+ SAVING CHECKPOINT & GRAPH...
+----------------------------
+ Saved checkpoint to ./build/chkpts/float_model.ckpt
+Network input shape:  (?, 28, 28, 1)
+                      (?, 14, 14, 16)
+                      (?, 7, 7, 32)
+                      (?, 4, 4, 64)
+                      (?, 1, 1, 10)
+Network output shape: (?, 10)
+ Saved binary inference graph to ./build/chkpts/inference_graph.pb
+ Run `tensorboard --logdir=./build/tb_logs --port 6006 --host localhost` to see the results.
