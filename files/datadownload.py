@@ -55,8 +55,9 @@ def datadownload():
     y_test = y_test[:5000]
 
     # reshape
-    x_train = x_train.reshape(x_train.shape[0],28,28,1)
-    x_test = x_test.reshape(x_test.shape[0],28,28,1)
+    x_train = x_train.reshape(x_train.shape[0],28,28,3)
+    x_test = x_test.reshape(x_test.shape[0],28,28,3)
    
         
     return (x_train,y_train), (x_test,y_test)
+
